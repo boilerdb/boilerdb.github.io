@@ -46,7 +46,7 @@
     }
 
 		.container-highlight {
-      max-width: 2000px;
+      background: #d8d8d8;
       margin: 0rem auto;
   		padding: 0 0rem;
     }
@@ -101,8 +101,10 @@
     }
 
     .highlight-box {
-      background: #d8d8d8;
-      padding: 2rem;
+      /* padding: 2rem; */
+      max-width: 1100px; /* Match .container's max-width */
+      margin: 0 auto; /* Center content */
+      padding: 2rem 1rem; /* Match .container's padding horizontally, keep vertical padding */
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -119,14 +121,13 @@
     }
 
     .highlight-time1 {
-			padding-left: 9rem;
+      max-width: 200px;
 			/* margin: 2rem auto; */
       /* padding: 0 1rem; */
       /* margin-bottom: 1rem; */
     }
 		.highlight-time2 {
-			padding-right: 9rem;
-			max-width: 800px;
+			max-width: 700px;
       font-size: 13px;
       text-align: justify
     }
