@@ -1,51 +1,440 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>The Purdue Database System Seminar</title>
-	<meta name="author" content="Yeasir Rayhan">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link rel="icon" type="image/png" href="purdue.png">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="purdue.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>THE PURDUE DATABASE
+    SYSTEM SEMINAR</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+			/* font-family: 'Lato', Verdana, Helvetica, sans-serif; */
+			font-family: 'Menlo', Courier, monospace;
+			/* font-family: 'Nunito', sans-serif; */
+			/* font-family: 'Inter', sans-serif; */
+      background-color: white;
+      color: #111;
+    }
+
+		header {
+  		background-color: 
+      /* rgb(206, 184, 136); */
+      /* #f5e6b3; */
+			#d0e8f2;
+  		padding: 1rem 0;
+		}
+		.container-header {
+      max-width: 1100px;
+      margin: 0 auto;
+  		padding: 0 1rem;
+    }
+
+    nav a {
+      margin-right: 2rem;
+      text-decoration: none;
+      color: black;
+      /* font-weight: bold; */
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+		.container-highlight {
+      max-width: 2000px;
+      margin: 0rem auto;
+  		padding: 0 0rem;
+    }
+
+    .container-talk {
+      max-width: 1100px;
+      margin: 0rem auto;
+      padding: 0 0rem;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .description {
+      margin-top: 1rem;
+      font-size: 13px;
+      max-width: 800px;
+      text-align: justify;
+    }
+
+    .subscribe {
+      margin-top: 1rem;
+      color: #999;
+      font-size: 12px;
+    }
+
+    .subscribe-button {
+      margin-top: 1rem;
+      padding: 0.3rem 1rem;
+      background: #d0e8f2;
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .highlight-box {
+      background: #ddd;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 1rem;
+    }
+		
+
+    .highlight-box div:first-child {
+      font-weight: bold;
+    }
+
+    .highlight-time1 {
+			padding-left: 9rem;
+			/* margin: 2rem auto; */
+      /* padding: 0 1rem; */
+      margin-bottom: 1rem;
+    }
+		.highlight-time2 {
+			padding-right: 9rem;
+			max-width: 800px;
+      font-size: 13px;
+      text-align: justify
+    }
+
+		.talks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 0rem;
+    }
+
+    .talk {
+      border-radius: 0px;
+      padding: 1.2rem;
+    }
+
+    .talk h2 {
+      font-size: 16px;
+      margin: 0.5rem 0;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .speakers {
+      font-size: 12px;
+      margin-top: 0.5rem;
+    }
+
+    .paper-abstract {
+      margin-top: 1rem;
+      font-size: 12px;
+      line-height: 1.1;
+      text-align: justify;
+    }
+
+    .bio {
+      margin-top: 1rem;
+      font-size: 12px;
+      line-height: 1.1;
+      text-align: justify;
+      display: none; /* Hidden by default for simple toggle */
+    }
+
+    .bio-text {
+      margin-top: 1rem;
+      font-size: 13px;
+      max-width: 800px;
+      text-align: justify;
+    }
+
+    .read-abstract, .read-bio {
+      margin-top: 0.8rem;
+      margin-right: 0.5rem;
+      background: none;
+      border: 1px solid #ccc;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-block; /* Inline buttons for 0th Edition */
+    }
+
+    .read-abstract-link, .read-bio-link {
+      color: #03aef7;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 12px;
+      margin-left: 0.2rem;
+    }
+
+    .abstract-short, .bio-short {
+      display: inline;
+    }
+
+    .abstract-full, .bio-full {
+      display: none;
+    }
+
+    .abstract-text {
+      margin-top: 1rem;
+      font-size: 13px;
+      max-width: 800px;
+      text-align: justify;
+    }
+
+    /* Ensure .paper-abstract and .bio-text are visible for short/full toggles */
+    .talk .paper-abstract:has(.abstract-text), .talk .bio-text {
+      display: block;
+    }
+
+    /* Hide .paper-abstract for simple toggle talks */
+    .talk .paper-abstract:not(:has(.abstract-text)) {
+      display: none;
+    }
+    
+    /* Footer (Ribbon) Styling */
+    footer {
+      background-color: #d0e8f2; /* Bright green, matching the image */
+      padding: 0.5rem 1rem;
+      position: relative; /* Use fixed if you want it to stick to the bottom */
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      font-size: 14px;
+    }
+
+    .footer-contact {
+      /* margin-right: 2rem; */
+      padding-left: 9rem;
+    }
+
+    .footer-partners {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem; /* Space between logos */
+    }
+
+    .footer-partners img {
+      height: 20px; /* Adjust logo height */
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .footer-contact {
+        margin-right: 0;
+      }
+
+      .footer-partners {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-	<table style="width:80%;border:0px;border-spacing:10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-		<tbody>
-			<!---------------------------------------------------------------------------------------------------------------->
-			<!---------------------------------------------------------------------------------------------------------------->
-			<tr style="padding:0px">
-				<!------------------------------------------Introductory Section starts ------------------------------------------>
-				<!---------------------------------------------------------------------------------------------------------------->
-				<td style="padding:2.5%;width:60%;vertical-align:middle">
-					<p style="text-align:left">
-						<name>The Purdue Database System Seminar</name><br>
-						[Subscribe to the list]
-					</p>
+	<header>
+		<div class="container-header" style="display: flex; justify-content: space-between; align-items: center;">
+			<div><strong>BoilDB</strong></div>
+			<nav>
+				<a href="#upcoming-talks">Upcoming talks</a>
+				<a href="#">Past talks</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</div>
+	</header>
 
-					<p style="text-align:justify"></p>
-						BoilDB is a proposed weekly research seminar at Purdue University aimed at fostering 
-						collaboration and knowledge sharing among graduate students and researchers. The seminar 
-						will serve as a platform for students to present their ongoing work, exchange feedback, 
-						and engage in interdisciplinary discussions. While the core focus will be on database 
-						research, we aim to include students from related fields such as computer architecture 
-						and systems to encourage cross-domain insights and potential collaborations.
-					</p>
-					
-				</td>
-				<td style="padding:2.0%;width:25%;max-width:30%">
-					<a href="images/.jpg">
-						<img style="width:90%;max-width:90%" alt="profile photo" src="images/.png" class="hoverZoomLink">
-					</a>
-				</td>
-			</tr>
-			<!---------------------------------------------------------------------------------------------------------------->
-			<!---------------------------------------------------------------------------------------------------------------->
-		</tbody>
-	</table>
-</body>
-<!------------------------------------------------------------------------------------------------------------>
-<!------------------------------------------profile pic ends-------------------------------------------------->
+  <div class="container">
+    <div class="hero">
+      <div>
+        <h1>
+					THE PURDUE DATABASE <br/>
+					SYSTEM SEMINAR
+        </h1>
+        <div class="description">
+          An initiative to bring together research groups working on data systems in Dutch universities and research institutes.
+					The seminar is aimed at fostering collaboration and knowledge sharing among graduate students and researchers. 
+					The seminar will serve as a platform for students to present their ongoing work, exchange feedback, and engage in interdisciplinary discussions. 
+					While the core focus will be on database research, we aim to include students from related fields such as computer architecture and systems to 
+					encourage cross-domain insights and potential collaborations. 
+        </div>
+        <div class="subscribe">
+          If you'd like to receive messages about upcoming talks, please subscribe to the list<br/>
+          by sending an email to [FIX THE MAIL LIST HERE (dsdsd-list-subscribe@cwi.nl)]
+        </div>
+        <button class="subscribe-button">Subscribe to the list</button>
+      </div>
+      <div>
+        <img class="logo" src="" alt="PLACE LOGO HERE?" />
+      </div>
+    </div>
+  </div>
+	
+	<div class="container-highlight">
+		<div class="highlight-box">
+			<div>
+				<div class="highlight-time1">FRIDAYS &nbsp;&nbsp;&nbsp; 4–5 PM</div>
+				<div class="highlight-time1">MONTHLY</div>
+			</div>
+			<div 
+			class="highlight-time2">
+				We hold monthly talks on Fridays from 3:30 PM to 5 PM CET for and by researchers and practitioners designing (and implementing) data systems. The objective is to establish a new forum for the Dutch Data Systems community to come together, foster collaborations between its members, and bring in high quality international speakers. We would like to invite all researchers, especially also PhD students, who are working on related topics to join the events. It is an excellent opportunity to receive feedback early on by researchers in your field.
+			</div>
+		</div>
+	</div>
 
+  <div id="upcoming-talks" class="container">
+    <h1 style="margin-bottom: 0.5rem; font-size:16px;">Upcoming Talks</h1>
+  </div>
+
+	<div class="container-talk">
+    <div class="talks-grid">
+
+      <div class="talk">
+        <div class="meta">March 14th, 2025 from 16:00 PM to 17:00 PM (Europe/Amsterdam / CET)</div>
+        <h2>0th Edition Seminar</h2>
+        <div class="speakers" style="line-height: 1.2;">
+          <p>The 0th Edition of the seminar will feature talks by</p>
+          Libin Zhou (Purdue CS)<br>
+          Random Person (Purdue CS)<br>
+        </div>
+      </div>
+      
+      <div class="talk">
+        <div class="meta">DATE: TO BE FIXED</div>
+        <h2>GTX: A Write-Optimized Latch-free Graph Data System with Transactional Support</h2>
+        <div class="speakers">Libin Zhou (Purdue CS)</div>
+        
+        <div class="paper-abstract">
+          <p class="abstract-text">
+            <span class="abstract-short">
+              This paper introduces GTX, a standalone main-memory write-optimized graph data system that specializes in structural and graph property updates while enabling concurrent reads and graph analytics through ACID transactions. Recent graph systems target concurrent 
+              <span class="read-abstract-link" onclick="toggleAbstract(this)">[...]</span>
+            </span>
+            <span class="abstract-full" style="display: none;">
+              This paper introduces GTX, a standalone main-memory write-optimized graph data system that specializes in structural and graph property updates while enabling concurrent reads and graph analytics through ACID transactions. Recent graph systems target concurrent read and write support while guaranteeing transaction semantics. However, their performance suffers from updates with real-world temporal locality over the same vertices and edges due to vertex-centric lock contentions. GTX has an adaptive delta-chain locking protocol on top of a carefully designed latch-free graph storage.
+              It eliminates vertex-level locking contention, and adapts to real-life workloads while maintaining sequential access to the graph's adjacency lists storage. GTX's transactions further support cache-friendly block-level concurrency control, and cooperative group commit and garbage collection. This combination of features ensures high update throughput and provides low latency graph analytics. 
+              Based on experimental evaluation, in addition to not sacrificing the performance of read-heavy analytical workloads, and having competitive performance similar to state-of-the-art systems, GTX has high read-write transaction throughput. For write-heavy transactional workloads, GTX achieves 
+              up to 11x better transaction throughput than the best-performing state-of-the-art system.
+              <span class="read-abstract-link" onclick="toggleAbstract(this)">[less]</span>
+            </span>
+          </p>
+        </div>
+        <div class="bio-text">
+          <p>
+            <span class="bio-short">
+              Libin Zhou is a PhD student at Purdue CS
+              <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[...]</span>
+            </span>
+            <span class="bio-full" style="display: none;">
+              Libin Zhou is a PhD student at Purdue University’s Computer Science department, specializing in graph database systems and high-performance data processing.
+              <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[less]</span>
+            </span>
+          </p>
+        </div>
+      </div>
+    
+    </div>
+	</div>
+  
+  <footer>
+    <div  id="contact" class="footer-contact">
+      Contact: [FIX THE MAIL HERE]
+    </div>
+  </footer>
+  
+
+  <script>
+    function toggleAbstract(element) {
+    const talk = element.closest('.talk');
+    const paperAbstract = talk.querySelector('.paper-abstract');
+    const abstractText = paperAbstract.querySelector('.abstract-text');
+
+    if (abstractText) {
+      // Handle GTX talk with short/full abstract
+      const shortText = abstractText.querySelector('.abstract-short');
+      const fullText = abstractText.querySelector('.abstract-full');
+      const links = talk.querySelectorAll('.read-abstract-link');
+
+      if (fullText.style.display === 'none') {
+        shortText.style.display = 'none';
+        fullText.style.display = 'inline';
+        links.forEach(link => link.textContent = '[See Less]');
+      } else {
+        shortText.style.display = 'inline';
+        fullText.style.display = 'none';
+        links.forEach(link => link.textContent = '[...]');
+      }
+    } else {
+      // Handle simple abstract toggle (e.g., 0th Edition talk)
+      const button = talk.querySelector('.read-abstract');
+      const isVisible = paperAbstract.style.display === 'block';
+      paperAbstract.style.display = isVisible ? 'none' : 'block';
+      button.textContent = isVisible ? 'read abstract' : 'hide abstract';
+    }
+  }
+
+  function toggleBio(element) {
+      const talk = element.closest('.talk');
+      const bioText = talk.querySelector('.bio-text');
+
+      if (bioText) {
+        // Handle GTX talk with short/full bio
+        const shortText = bioText.querySelector('.bio-short');
+        const fullText = bioText.querySelector('.bio-full');
+        const links = talk.querySelectorAll('.read-bio-link');
+
+        if (fullText.style.display === 'none') {
+          shortText.style.display = 'none';
+          fullText.style.display = 'inline';
+          links.forEach(link => link.textContent = '[See Less]');
+        } else {
+          shortText.style.display = 'inline';
+          fullText.style.display = 'none';
+          links.forEach(link => link.textContent = '[...]');
+        }
+      } else {
+        // Handle simple bio toggle (e.g., 0th Edition talk)
+        const bio = talk.querySelector('.bio');
+        const button = talk.querySelector('.read-bio');
+        const isVisible = bio.style.display === 'block';
+        bio.style.display = isVisible ? 'none' : 'block';
+        button.textContent = isVisible ? 'read bio' : 'hide bio';
+      }
+    }
+</script>
 </body>
 </html>
