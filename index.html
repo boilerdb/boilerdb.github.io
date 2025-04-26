@@ -29,6 +29,10 @@
       margin: 0 auto;
   		padding: 0 1rem;
     }
+    
+    .container h1 {
+      font-family: 'Menlo', Courier, monospace;
+    }
 
     nav a {
       margin-right: 2rem;
@@ -77,6 +81,7 @@
     }
 
     .description {
+      font-family: 'Menlo', Courier, monospace;
       margin-top: 1rem;
       font-size: 13px;
       max-width: 800px;
@@ -100,7 +105,21 @@
       color: #999;
       font-size: 12px;
     }
+    .email-link {
+      background-color: transparent;
+      text-decoration: none;
+      color: black;
+      transition: background-color 0.3s ease;
+      border-radius: 2px;
+    }
 
+    /* .email-link:hover,
+    .email-link:focus,
+    .email-link:active,
+    .email-link:visited {
+      background-color: #CFB991;
+      padding: 2px 2px;
+    } */
     .subscribe-button {
       margin-top: 1rem;
       padding: 0.3rem 1rem;
@@ -147,7 +166,7 @@
     }
 		.talks-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 0rem;
     }
 
@@ -340,20 +359,17 @@
           organized by <a href="https://www.cs.purdue.edu/homes/aref/" target="_blank">Prof. Walid Aref</a>.
         </div>
         <div class="subscribe">
-          If you'd like to receive messages about upcoming talks, please subscribe to the list<br/>
-          by sending an email to [FIX THE MAIL LIST HERE ()]
+          If you'd like to receive messages about upcoming talks, please subscribe to the list by sending an email to <br>
+          BOILERDB-request@LISTS.PURDUE.EDU
         </div>
-        <button class="subscribe-button">Subscribe to the list</button>
-        <!-- <div class="subscribe" style="margin-top: 1rem;">
-          Add our seminar schedule to your calendar:
-          <a href="webcal://p154-caldav.icloud.com/published/2/MTc2MzkxNTA1NzkxNzYzOcMF_SDVVEd9QVz4FwJ8EWgxfw2BpS7a1psqhXDbwLGHIhuxlaT0Z2BD89hpxmD8wU13HM3o_oskVTDZcMJfdsM" class="subscribe-button" style="display: inline-block; text-decoration: none;">
-            Add to Apple Calendar
-          </a>
-        </div> -->
+        <button class="subscribe-button" 
+        onclick="window.location.href='mailto:BOILERDB-request@LISTS.PURDUE.EDU?subject=Subscribe%20to%20BoilerDB&body=I%20want%20to%20subscribe'">
+          Subscribe to the list
+        </button>
       </div>
-      <div>
+      <!-- <div>
         <img class="logo" src="" alt="PLACE LOGO HERE?" />
-      </div>
+      </div> -->
     </div>
   </div>
 	
