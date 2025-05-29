@@ -377,12 +377,12 @@
 		<div class="highlight-box">
 			<div>
 				<div class="highlight-time1">
-          WEDNESDAYS 12-1 PM <br>
-          MONTHLY
+          Time: Wednesdays<br>
+          Location: Hybrid
         </div>
 			</div>
 			<div class="highlight-time2">
-				We hold monthly talks on Wednesdays from 12 PM to 1 PM EST.
+				We hold monthly talks on Wednesdays.
 			</div>
 		</div>
 	</div>
@@ -397,116 +397,184 @@
     <!-- [][] -->
     <div class="talks-grid"> <!-- A grid starts -->
       <div class="talk"> <!-- grid: talk 1 starts -->
-        <div class="meta">May 5 to June 30, 2025 from 12:00 PM to 1:00 PM (EDT)</div>
+        <div class="meta">Summer 2025</div>
         <!-- SIGMOD 2025 Dry Run -->
         <h2>1st Edition</h2>
         <div class="speakers-summary" style="line-height: 1.2;">
           <p>The 1st Edition of the seminar will feature talks by</p>
-          Libin Zhou (Purdue CS)<br>
           Shige Liu (Purdue CS)<br>
+          Libin Zhou (Purdue CS)<br>
+          Yeasir Rayhan (Purdue CS)<br>
           Abdullah Al-Mamun (Purdue CS)<br>
           Lu Xing (Purdue CS)<br>
         </div>
       </div> <!-- grid: talk 1 ends -->
       
-      <div class="talk"> <!-- grid: talk 2 starts -->
-        <div class="meta">May 25, 2025 12:00 PM - 1:00 PM</div>
-        <h2>GTX: A Write-Optimized Latch-free Graph Data System with Transactional Support</h2>
-        <div class="speakers">
-          Libin Zhou (Purdue CS)
-          <a href="https://github.com/Jiboxiake" target="_blank"><img src="./icons/LINK.svg" alt="EXTERNAL-LINK" width="18" height="18"></a>
-        </div>
-        <div class="buttons-grid">
-          <a href="https://arxiv.org/pdf/2405.01418" target="_blank" title="Paper">
-            <img src="./icons/PDF.svg" alt="PDF" width="28" height="28">
-          </a>
-          <a href="" target="_blank" title="Slides">
-            <img src="./icons/SLIDE.svg" alt="SLIDE" width="35" height="35">
-          </a>
-        </div>
-        
-        <div class="paper-abstract">
-          <p class="abstract-text">
-            <span class="abstract-short">
-              This paper introduces GTX, a standalone main-memory write-optimized graph data system that specializes in structural and graph property updates 
-              while enabling concurrent reads and graph analytics through ACID transactions.
-              <span class="read-abstract-link" onclick="toggleAbstract(this)">[...]</span>
-            </span>
-            <span class="abstract-full" style="display: none;">
-              This paper introduces GTX, a standalone main-memory write-optimized graph data system that specializes in structural and graph property updates while enabling concurrent reads and graph analytics through ACID transactions. Recent graph systems target concurrent read and write support while guaranteeing transaction semantics. However, their performance suffers from updates with real-world temporal locality over the same vertices and edges due to vertex-centric lock contentions. GTX has an adaptive delta-chain locking protocol on top of a carefully designed latch-free graph storage.
-              It eliminates vertex-level locking contention, and adapts to real-life workloads while maintaining sequential access to the graph's adjacency lists storage. GTX's transactions further support cache-friendly block-level concurrency control, and cooperative group commit and garbage collection. This combination of features ensures high update throughput and provides low latency graph analytics. 
-              Based on experimental evaluation, in addition to not sacrificing the performance of read-heavy analytical workloads, and having competitive performance similar to state-of-the-art systems, GTX has high read-write transaction throughput. For write-heavy transactional workloads, GTX achieves 
-              up to 11x better transaction throughput than the best-performing state-of-the-art system.
-              <span class="read-abstract-link" onclick="toggleAbstract(this)">[less]</span>
-            </span>
-          </p>
-        </div>
-        <div class="bio-text">
-          <p>
-            <span class="bio-short">
-              Libin Zhou is a PhD student at Purdue CS
-              <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[...]</span>
-            </span>
-            <span class="bio-full" style="display: none;">
-              Libin Zhou is a PhD student at at Purdue CS.
-              <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[less]</span>
-            </span>
-          </p>
-        </div>
-      </div> <!-- grid: talk 2 ends -->
-      <div class="talk"> <!-- grid: talk 3 starts -->
-        <div class="meta">May 25, 2025 12:00 PM - 1:00 PM</div>
-        <h2>TigerVector: Supporting Vector Search in Graph Databases for Advanced RAGs</h2>
-        <div class="speakers">
-          Shige Liu (Purdue CS)
-          <a href="" target="_blank"><img src="./icons/LINK.svg" alt="EXTERNAL-LINK" width="18" height="18"></a>
-        </div>
-        <div class="buttons-grid">
-          <a href="https://arxiv.org/pdf/2501.11216" target="_blank" title="Paper">
-            <img src="./icons/PDF.svg" alt="PDF" width="28" height="28">
-          </a>
-          <a href="" target="_blank" title="Slides">
-            <img src="./icons/SLIDE.svg" alt="SLIDE" width="35" height="35">
-          </a>
-        </div> 
-        <div class="paper-abstract">
-          <p class="abstract-text">
-            <span class="abstract-short">
-              In this paper, we introduce TigerVector, a system that integrates vector search and graph query within TigerGraph, a Massively Parallel Processing (MPP) 
-              native graph database.
-              <span class="read-abstract-link" onclick="toggleAbstract(this)">[...]</span>
-            </span>
-            <span class="abstract-full" style="display: none;">
-              In this paper, we introduce TigerVector, a system that integrates vector search and graph query within TigerGraph, a Massively Parallel Processing (MPP) 
-              native graph database. We extend the vertex attribute type with the embedding type. To support fast vector search, we devise an MPP index framework that 
-              interoperates efficiently with the graph engine. The graph query language GSQL is enhanced to support vector type expressions and enable query compositions 
-              between vector search results and graph query blocks. These advancements elevate the expressive power and analytical capabilities of graph databases, 
-              enabling seamless fusion of unstructured and structured data in ways previously unattainable. Through extensive experiments, we demonstrate 
-              TigerVector's hybrid search capability, scalability, and superior performance compared to other graph databases (including Neo4j and Amazon Neptune) 
-              and a highly optimized specialized vector database (Milvus). TigerVector was integrated into TigerGraph v4.2, the latest release of TigerGraph, 
-              in December 2024.
-              <span class="read-abstract-link" onclick="toggleAbstract(this)">[less]</span>
-            </span>
-          </p>
-        </div>
-        <div class="bio-text">
-          <p>
-            <span class="bio-short">
-              Shige Liu is a PhD student at Purdue CS.
-              <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[...]</span>
-            </span>
-            <span class="bio-full" style="display: none;">
-              Shige Liu is a PhD student at Purdue CS.
-              <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[less]</span>
-            </span>
-          </p>
-        </div>
-      </div> <!-- grid: talk 3 ends -->
+      <!-- Move TigerVector talk here -->
+    <div class="talk"> <!-- grid: talk 2 starts -->
+      <div class="meta">June 4, 2025 11:00 AM - noon (Eastern Time)</div>
+      <div class="meta">
+        Location: 
+        <a href="https://purdue-edu.zoom.us/j/93085534760?pwd=n8t7PqiPit6daqRjaDGBYM9u9HSKsc.1" target="_blank">
+          https://purdue-edu.zoom.us/j/93085534760?pwd=n8t7PqiPit6daqRjaDGBYM9u9HSKsc.1
+        </a>
+      </div>
+      <h2>TigerVector: Supporting Vector Search in Graph Databases for Advanced RAGs</h2>
+      <div class="speakers">
+        Shige Liu (Purdue CS)
+        <a href="" target="_blank"><img src="./icons/LINK.svg" alt="EXTERNAL-LINK" width="18" height="18"></a>
+      </div>
+      <div class="buttons-grid">
+        <a href="https://arxiv.org/pdf/2501.11216" target="_blank" title="Paper">
+          <img src="./icons/PDF.svg" alt="PDF" width="28" height="28">
+        </a>
+        <a href="" target="_blank" title="Slides">
+          <img src="./icons/SLIDE.svg" alt="SLIDE" width="35" height="35">
+        </a>
+      </div> 
+      <div class="paper-abstract">
+        <p class="abstract-text">
+          <span class="abstract-short">
+            In this paper, we introduce TigerVector, a system that integrates vector search and graph query within TigerGraph, a Massively Parallel Processing (MPP) 
+            native graph database.
+            <span class="read-abstract-link" onclick="toggleAbstract(this)">[...]</span>
+          </span>
+          <span class="abstract-full" style="display: none;">
+            In this paper, we introduce TigerVector, a system that integrates vector search and graph query within TigerGraph, a Massively Parallel Processing (MPP) 
+            native graph database. We extend the vertex attribute type with the embedding type. To support fast vector search, we devise an MPP index framework that 
+            interoperates efficiently with the graph engine. The graph query language GSQL is enhanced to support vector type expressions and enable query compositions 
+            between vector search results and graph query blocks. These advancements elevate the expressive power and analytical capabilities of graph databases, 
+            enabling seamless fusion of unstructured and structured data in ways previously unattainable. Through extensive experiments, we demonstrate 
+            TigerVector's hybrid search capability, scalability, and superior performance compared to other graph databases (including Neo4j and Amazon Neptune) 
+            and a highly optimized specialized vector database (Milvus). TigerVector was integrated into TigerGraph v4.2, the latest release of TigerGraph, 
+            in December 2024.
+            <span class="read-abstract-link" onclick="toggleAbstract(this)">[less]</span>
+          </span>
+        </p>
+      </div>
+      <div class="bio-text">
+        <p>
+          <span class="bio-short">
+            Shige Liu a third-year Ph.D. student in the Department of Computer Science at Purdue University, advised by Prof. Jianguo Wang. His research focuses on Vector Databases, Graph Databases, and Retrieval-Augmented Generation (RAG). He is passionate about building efficient and practical database systems to power next-generation applications.
+            <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[...]</span>
+          </span>
+          <span class="bio-full" style="display: none;">
+            Shige Liu a third-year Ph.D. student in the Department of Computer Science at Purdue University, advised by Prof. Jianguo Wang. His research focuses on Vector Databases, Graph Databases, and Retrieval-Augmented Generation (RAG). He is passionate about building efficient and practical database systems to power next-generation applications.
+            <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[less]</span>
+          </span>
+        </p>
+      </div>
+    </div> <!-- grid: talk 2 ends -->
+
+    <!-- GTX talk now becomes talk 3 -->
+    <div class="talk"> <!-- grid: talk 3 starts -->
+      <div class="meta">TBD</div>
+      <h2>GTX: A Write-Optimized Latch-free Graph Data System with Transactional Support</h2>
+      <div class="speakers">
+        Libin Zhou (Purdue CS)
+        <a href="https://github.com/Jiboxiake" target="_blank"><img src="./icons/LINK.svg" alt="EXTERNAL-LINK" width="18" height="18"></a>
+      </div>
+      <div class="buttons-grid">
+        <a href="https://arxiv.org/pdf/2405.01418" target="_blank" title="Paper">
+          <img src="./icons/PDF.svg" alt="PDF" width="28" height="28">
+        </a>
+        <a href="" target="_blank" title="Slides">
+          <img src="./icons/SLIDE.svg" alt="SLIDE" width="35" height="35">
+        </a>
+      </div>
+      <div class="paper-abstract">
+        <p class="abstract-text">
+          <span class="abstract-short">
+            This paper introduces GTX, a standalone main-memory write-optimized graph data system that specializes in structural and graph property updates 
+            while enabling concurrent reads and graph analytics through ACID transactions.
+            <span class="read-abstract-link" onclick="toggleAbstract(this)">[...]</span>
+          </span>
+          <span class="abstract-full" style="display: none;">
+            This paper introduces GTX, a standalone main-memory write-optimized graph data system that specializes in structural and graph property updates while enabling concurrent reads and graph analytics through ACID transactions. Recent graph systems target concurrent read and write support while guaranteeing transaction semantics. However, their performance suffers from updates with real-world temporal locality over the same vertices and edges due to vertex-centric lock contentions. GTX has an adaptive delta-chain locking protocol on top of a carefully designed latch-free graph storage.
+            It eliminates vertex-level locking contention, and adapts to real-life workloads while maintaining sequential access to the graph's adjacency lists storage. GTX's transactions further support cache-friendly block-level concurrency control, and cooperative group commit and garbage collection. This combination of features ensures high update throughput and provides low latency graph analytics. 
+            Based on experimental evaluation, in addition to not sacrificing the performance of read-heavy analytical workloads, and having competitive performance similar to state-of-the-art systems, GTX has high read-write transaction throughput. For write-heavy transactional workloads, GTX achieves 
+            up to 11x better transaction throughput than the best-performing state-of-the-art system.
+            <span class="read-abstract-link" onclick="toggleAbstract(this)">[less]</span>
+          </span>
+        </p>
+      </div>
+      <div class="bio-text">
+        <p>
+          <span class="bio-short">
+            Libin Zhou is a PhD student at Purdue CS
+            <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[...]</span>
+          </span>
+          <span class="bio-full" style="display: none;">
+            Libin Zhou is a PhD student at at Purdue CS.
+            <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[less]</span>
+          </span>
+        </p>
+      </div>
+    </div> <!-- grid: talk 3 ends -->
     </div><!-- A grid ends -->
     <!-- [][] -->
     <div class="talks-grid"> <!-- A grid starts -->
+          <div class="talk"> <!-- grid: talk 3 starts -->
+      <div class="meta">TBD</div>
+      <h2>	Exploring Next Token Prediction For Optimizing Databases</h2>
+      <div class="speakers">
+        Yeasir Rayhan (Purdue CS)
+        <a href="" target="_blank"><img src="./icons/LINK.svg" alt="EXTERNAL-LINK" width="18" height="18"></a>
+      </div>
+      <div class="buttons-grid">
+        <a href="" target="_blank" title="Paper">
+          <img src="./icons/PDF.svg" alt="PDF" width="28" height="28">
+        </a>
+        <a href="" target="_blank" title="Slides">
+          <img src="./icons/SLIDE.svg" alt="SLIDE" width="35" height="35">
+        </a>
+      </div>
+      <div class="paper-abstract">
+        <p class="abstract-text">
+          <span class="abstract-short">
+            The Next Token Prediction paradigm (NTP, for short) lies at the
+            forefront of modern large foundational models that are pre-trained
+            on diverse and large datasets. These models generalize effectively,
+            and have proven to be very successful in Natural Language Processing (NLP). Inspired by the generalization capabilities of Large
+            Language Models (LLMs), we investigate whether the same NTP
+            paradigm can be applied to DBMS design and optimization tasks.
+            <span class="read-abstract-link" onclick="toggleAbstract(this)">[...]</span>
+          </span>
+          <span class="abstract-full" style="display: none;">
+            The Next Token Prediction paradigm (NTP, for short) lies at the
+            forefront of modern large foundational models that are pre-trained
+            on diverse and large datasets. These models generalize effectively,
+            and have proven to be very successful in Natural Language Processing (NLP). Inspired by the generalization capabilities of Large
+            Language Models (LLMs), we investigate whether the same NTP
+            paradigm can be applied to DBMS design and optimization tasks.
+            Adopting NTP directly for database optimization is non-trivial due
+            to the fundamental differences between the domains. In this paper, we present a framework, termed Probe and Learn (PoLe), for
+            applying NTP to optimize database systems. PoLe leverages Decision Transformers and hardware-generated tokens to effectively
+            incorporate NTP into database systems. As a proof of concept, we
+            demonstrate PoLe in the context of the index scheduling task over
+            NUMA servers in main-memory database systems. Preliminary
+            results for this scheduling task demonstrate that adopting NTP and
+            PoLe can improve both performance and generalizability.
+            <span class="read-abstract-link" onclick="toggleAbstract(this)">[less]</span>
+          </span>
+        </p>
+      </div>
+      <div class="bio-text">
+        <p>
+          <span class="bio-short">
+            Yeasir Rayhan a 4th year PhD student in Computer Science at Purdue University, advised by Professor Walid G. Aref.
+            <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[...]</span>
+          </span>
+          <span class="bio-full" style="display: none;">
+            Yeasir Rayhan a 4th year PhD student in Computer Science at Purdue University, advised by Professor Walid G. Aref.
+            His primary research interest is in Database Management Systems, with an emphasis on leveraging modern hardware and machine learning to design hardware-conscious database kernels.
+            <span class="read-bio-link" onclick="toggleBio(this)" role="button" tabindex="0">[less]</span>
+          </span>
+        </p>
+      </div>
+    </div> <!-- grid: talk 3 starts -->
       <div class="talk"> <!-- grid: talk 1 starts -->
-        <div class="meta">May 25, 2025 12:00 PM - 1:00 PM</div>
+        <div class="meta">TBD</div>
         <h2>Learned Indexes From the One-dimensional to the Multi-dimensional Spaces: Challenges, Techniques, and Opportunities</h2>
         <div class="speakers">
           Abdullah Al-Mamun (Purdue CS)<a href="" target="_blank"><img src="./icons/LINK.svg" alt="EXTERNAL-LINK" width="18" height="18"></a>
@@ -545,7 +613,7 @@
         </div>
       </div> <!-- grid: talk 1 ends -->
       <div class="talk"> <!-- grid: talk 2 starts -->
-        <div class="meta">May 25, 2025 12:00 PM - 1:00 PM</div>
+        <div class="meta">TBD</div>
         <h2>An Adaptive Hotspot-Aware Index for Oscillating Write-Heavy and Read-Heavy Workloads</h2>
         <div class="speakers">
           Lu Xing (Purdue CS)<a href="" target="_blank"><img src="./icons/LINK.svg" alt="EXTERNAL-LINK" width="18" height="18"></a>
